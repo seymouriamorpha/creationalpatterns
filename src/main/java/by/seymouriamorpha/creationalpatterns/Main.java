@@ -1,7 +1,6 @@
 package by.seymouriamorpha.creationalpatterns;
 
 import by.seymouriamorpha.creationalpatterns.enums.Price;
-import by.seymouriamorpha.creationalpatterns.factory.ComputerAbstractFactory;
 import by.seymouriamorpha.creationalpatterns.factory.ComputerAbstractFactoryService;
 import by.seymouriamorpha.creationalpatterns.factory.ComputerFactoryMethodService;
 import by.seymouriamorpha.creationalpatterns.factory.ComputerService;
@@ -17,7 +16,6 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-
         printFactoryInformation();
         while (true){
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -36,7 +34,6 @@ public class Main {
             }
             break;
         }
-
     }
 
     private static Price printPriceInformation() throws IOException {

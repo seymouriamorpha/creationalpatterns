@@ -9,6 +9,15 @@ repositories {
     mavenCentral()
 }
 
+task createJar(type: Jar) {
+    manifest {
+        attributes "Implementation-Title": "Creational Patterns", "Implementation-Version": version, "Main-Class": "by.seymouriamorpha.creationalpatterns.Main"
+    }
+    baseName = project.name
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+
 }

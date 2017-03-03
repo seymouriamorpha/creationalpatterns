@@ -42,18 +42,23 @@ public class ComputerImpl implements Computer {
     }
 
     @Override
+    public String getOS() {
+        return OS;
+    }
+
+    @Override
     public void installOS(String os) {
         this.OS = os;
     }
 
     @Override
     public String toString() {
-        return "Your new computer :" +
-                "\n\tkeyboard: " + keyboard.getKeyboard() +
-                "\n\tmonitor: " + monitor.getMonitor() +
-                "\n\tblock: " + block.getSystemBlock() +
-                "\n\tmouse: " + mouse.getMouse() +
-                "\n\tOS: " + OS
+        return  "\n\t{" +
+                "\n\t\"keyboard\":\"" + keyboard.getKeyboard() + "\"," +
+                "\n\t\"monitor\":\"" + monitor.getMonitor() + "\"," +
+                "\n\t\"block\":\"" + block.getSystemBlock() + "\"," +
+                "\n\t\"mouse\":\"" + mouse.getMouse() + "\"," +
+                "\n\t\"OS\":\"" + OS + "\"\n\t}\n"
                 ;
     }
 

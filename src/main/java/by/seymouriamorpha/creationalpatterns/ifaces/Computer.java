@@ -5,11 +5,12 @@ package by.seymouriamorpha.creationalpatterns.ifaces;
  */
 public interface Computer {
 
-    public Keyboard getKeyboard();
-    public Monitor getMonitor();
-    public Mouse getMouse();
-    public SystemBlock getSystemBlock();
+    Keyboard getKeyboard();
+    Monitor getMonitor();
+    Mouse getMouse();
+    SystemBlock getSystemBlock();
+    String getOS();
 
-    public void installOS(String os);
+    void installOS(String os);
 
 }

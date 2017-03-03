@@ -5,8 +5,10 @@ import by.seymouriamorpha.creationalpatterns.factory.ComputerAbstractFactoryServ
 import by.seymouriamorpha.creationalpatterns.factory.ComputerFactoryMethodService;
 import by.seymouriamorpha.creationalpatterns.factory.ComputerService;
 import by.seymouriamorpha.creationalpatterns.ifaces.Computer;
+import org.json.simple.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -57,17 +59,32 @@ public class Main {
         ComputerService service = new ComputerFactoryMethodService(price);
         Computer computer = service.process();
         System.out.println(computer);
+        saveComputerConfiguration(computer);
     }
 
     private static void processAbstractFactory(Price price){
         ComputerService service = new ComputerAbstractFactoryService(price);
         Computer computer = service.process();
         System.out.println(computer);
+        saveComputerConfiguration(computer);
     }
 
     private static void printFactoryInformation(){
         System.out.print("Please, select a factory: \n1) Factory method\n2) Abstract factory\n");
         System.out.print(": ");
+    }
+
+    private static void saveComputerConfiguration(Computer computer) {
+        JSONObject object = new JSONObject();
+        object.put("NewComputer", computer);
+        try (FileWriter file = new FileWriter("computer.json")) {
+            file.write(object.toString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Computer successfully saved.");
     }
 
 }

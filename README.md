@@ -13,6 +13,7 @@ Write an app that creates and tunes a Computer.
 Based on console input
         
         computerType=="chip"
+    or
         computerType=="expensive" 
         
 the ComputerService.process() (not static) should create a computer with chip or expensive versions of computer parts. Then wire the parts together, install the OS and save the fully tuned computer to a file.
